@@ -22,6 +22,13 @@
     <title>Distio Oy</title>
     <link href="dist/output.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -48,13 +55,59 @@
         <div class="container mx-6 p-6 rounded-md bg-lightBlue">
           <!-- Menu items -->
           <div class="space-x-6 md-flex">
-            <a href="#" class="text-2xl hover:text-darkBlue">Services</a>
-            <a href="#" class="text-2xl hover:text-red">References</a>
-            <a href="#" class="text-2xl hover:text-red">About us</a>
+            <a href="#" class="text-grey text-2xl hover:text-yellow"
+              >Services</a
+            >
+            <a href="#" class="text-grey text-2xl hover:text-yellow"
+              >References</a
+            >
+            <a href="#" class="text-grey text-2xl hover:text-yellow"
+              >About us</a
+            >
           </div>
         </div>
       </div>
     </nav>
+
+    <section id="hero">
+      <div class="container flex mx-auto p-6 py-24 max-w-6xl">
+        <!-- Left portion -->
+        <div class="flex flex-col justify-center pr-10">
+          <div class="mt-10 mb-5">
+            <img src="img/dist-data-sol.svg" alt="" />
+          </div>
+          <p class="text-grey text-xl">
+            Distio provides data and IT solutions that take in your information
+            clutter and distils it into refined
+            <span class="text-yellow">spirit</span> that ages well and helps
+            your business to focus on
+            <span class="text-yellow">the essential</span>.
+          </p>
+          <div class="">
+            <button class="rounded-md bg-darkBlue text-white p-4 m-6 ml-0">
+              GET IN TOUCH
+            </button>
+          </div>
+        </div>
+        <!-- Right portion (bottle image) -->
+        <img src="img/bottle_large.svg" alt="" />
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="container flex mx-auto p-6 max-w-6xl justify-center">
+        <div class="flex flex-col">
+          <div class="mt-10 mb-5">
+            <img src="img/hello_world.svg" alt="" />
+            <p class="text-grey text-xl max-w-fit py-4">
+              Simply put, Distio is one-man company with an aim to deliver
+              affordable services in the field of code & data. Currently Distio
+              can support you with following technologies:
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <div class="h-screen grid grid-cols-3 gap-4 content-center">
 			<div></div>
