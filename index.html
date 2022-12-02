@@ -46,15 +46,17 @@
     <!-- Navbar -->
     <nav class="relative container mx-auto max-w-6xl p-6">
       <!-- Flex container -->
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-center lg:justify-between">
         <!-- Logo -->
         <div class="pt-2">
-          <img src="img/svglogo.svg" alt="" />
+          <img class="lg:h-[165px]" src="img/svglogo.svg" alt="" />
         </div>
 
-        <div class="container mx-6 p-6 rounded-md bg-lightBlue">
+        <div
+          class="hidden lg:block lg:ml-12 lg:p-6 lg:rounded-lg lg:bg-lightBlue"
+        >
           <!-- Menu items -->
-          <div class="space-x-6 md-flex">
+          <div class="flex justify-center space-x-10">
             <a href="#competences" class="text-2xl hover:text-yellow"
               >Services</a
             >
@@ -65,9 +67,11 @@
     </nav>
 
     <section id="hero">
-      <div class="container flex mx-auto p-6 py-24 max-w-6xl">
+      <div
+        class="container flex flex-col mx-auto p-6 mt-16 mb-24 content-center items-center md:max-w-6xl md:flex-row"
+      >
         <!-- Left portion -->
-        <div class="flex flex-col justify-center pr-10">
+        <div class="flex-col">
           <div class="mb-5">
             <img src="img/dist-data-sol.svg" alt="" />
           </div>
@@ -78,14 +82,18 @@
             your business to focus on
             <span class="text-yellow">the essential</span>.
           </p>
-          <div class="">
+          <div class="flex justify-center md:justify-start">
             <button class="rounded-md bg-darkBlue text-white p-4 m-6 ml-0">
               GET IN TOUCH
             </button>
           </div>
         </div>
         <!-- Right portion (bottle image) -->
-        <img src="img/bottle_large.svg" alt="" />
+        <img
+          class="hidden md:block md:ml-6"
+          src="img/bottle_large.svg"
+          alt=""
+        />
       </div>
     </section>
 
@@ -103,17 +111,22 @@
         </div>
       </div>
 
-      <div class="container mx-auto p-6 py-24 max-w-6xl">
+      <div class="container mx-auto p-6 md:mb-24 md:max-w-6xl">
+        <!-- Show only in >md -->
         <div
-          class="grid grid-cols-4 justify-between justify-items-center mb-12"
+          class="hidden lg:grid lg:grid-cols-4 lg:justify-between lg:justify-items-center lg:mb-12"
         >
           <h1>Web stack</h1>
           <h1>Data stack</h1>
           <h1>Frameworks</h1>
           <h1>Product Management</h1>
         </div>
-        <div class="grid grid-cols-4 justify-between justify-items-center">
-          <div class="relative">
+        <!-- End show only in >md -->
+
+        <div
+          class="grid grid-cols-1 justify-between justify-items-center sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <div class="relative mb-16">
             <img
               class="absolute scale-[50%] left-0 top-[-40%] hover:scale-[70%]"
               src="img/HTML5_logo_black.svg"
@@ -131,7 +144,7 @@
             />
             <img class="" src="img/circle.svg" alt="" />
           </div>
-          <div class="relative">
+          <div class="relative mb-16">
             <img
               class="absolute scale-[70%] left-[15%] top-[-25%] hover:scale-[90%]"
               src="img/Python-logo-notext.svg"
@@ -154,7 +167,7 @@
             />
             <img src="img/circle.svg" alt="" />
           </div>
-          <div class="relative">
+          <div class="relative mb-16">
             <img
               class="absolute scale-125 left-[10%] top-[15%] hover:scale-[150%]"
               src="img/tailwindcss-logotype.svg"
@@ -172,7 +185,7 @@
             />
             <img src="img/circle.svg" alt="" />
           </div>
-          <div class="relative">
+          <div class="relative mb-16">
             <img
               class="absolute top-[-5%] hover:scale-[120%]"
               src="img/PSPO.svg"
@@ -190,13 +203,9 @@
     </section>
 
     <section id="contact">
-      <div class="container flex mx-auto p-6 py-24 max-w-6xl justify-between">
-        <div class="flex-col mx-24 my-4">
-          <img class="rounded-lg h-60" src="img/iivr-2.jpg" alt="" />
-          <p><strong>Iivari Heikkilä</strong></p>
-          <p>Entrepreneur</p>
-          <p>M.Sc. (Tech.)</p>
-        </div>
+      <div
+        class="container flex flex-col p-6 py-24 items-center md:mx-auto md:flex-row-reverse md:max-w-6xl md:justify-between"
+      >
         <div class="">
           <img class="mb-5" src="img/contactpricing.svg" alt="" />
           <p class="max-w-fit">
@@ -205,13 +214,17 @@
             excluding VAT and subject to change.
           </p>
         </div>
+        <div class="flex-col mx-6 lg:mx-24 my-4">
+          <img class="mt-12 h-60 rounded-lg" src="img/iivr-2.jpg" alt="" />
+          <p><strong>Iivari Heikkilä</strong></p>
+          <p>Entrepreneur</p>
+          <p>M.Sc. (Tech.)</p>
+        </div>
       </div>
     </section>
 
     <section id="footer">
-      <div
-        class="bg-lightBlue flex justify-center w-screen rounded-tr-lg rounded-tl-lg p-4 mx-0"
-      >
+      <div class="bg-lightBlue flex justify-center w-screen p-4 mx-0">
         <div class="flex-col text-center">
           <p><a href="mailto:iivari@distio.fi">iivari@distio.fi</a></p>
           <p><a href="tel:+358509132561">0509132561</a></p>
