@@ -729,6 +729,11 @@ p {
   margin-bottom: 1rem;
 }
 
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -781,6 +786,10 @@ p {
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-6xl {
@@ -897,6 +906,14 @@ p {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-tr-lg {
+  border-top-right-radius: 0.5rem;
+}
+
+.rounded-tl-lg {
+  border-top-left-radius: 0.5rem;
 }
 
 .border-0 {
