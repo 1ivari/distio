@@ -29,6 +29,14 @@
 			href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- Deferred CSS loading (recommended) -->
+		<link
+			rel="stylesheet"
+			href="src/cookieconsent.css"
+			media="print"
+			onload="this.media='all'"
+		/>
 	</head>
 
 	<body>
@@ -99,20 +107,19 @@
 		</section>
 
 		<section id="competences">
-			<div class="container mx-auto p-6 max-w-6xl">
-				<div class="flex flex-col">
-					<div class="mb-5">
-						<img src="img/hello_world.svg" alt="" />
-						<p class="max-w-fit py-4">
-							Simply put, Distio is one-man company with an aim to deliver
-							affordable services in the field of code & data. Currently Distio
-							can support you with following technologies:
-						</p>
-					</div>
+			<div class="flex flex-col items-center mb-12 p-6">
+				<img src="img/hello_world.svg" alt="" />
+
+				<div class="py-4 max-w-lg text-center">
+					<p>
+						Simply put, Distio is one-man company with an aim to deliver
+						affordable services in the field of code & data. Currently Distio
+						can support you with following technologies:
+					</p>
 				</div>
 			</div>
 
-			<div class="container mx-auto p-6 md:mb-24 md:max-w-6xl">
+			<div class="container mx-auto p-6 md:max-w-6xl">
 				<!-- Show only in >md -->
 				<div
 					class="hidden lg:grid lg:grid-cols-4 lg:justify-between lg:justify-items-center lg:mb-12"
@@ -129,21 +136,50 @@
 				>
 					<div class="relative mb-16">
 						<img
+							data-tooltip-target="html5"
+							data-tooltip-placement="bottom"
 							class="absolute scale-[50%] left-0 top-[-40%] hover:scale-[70%]"
 							src="img/HTML5_logo_black.svg"
 							alt=""
 						/>
 						<img
+							data-tooltip-target="js"
+							data-tooltip-placement="left"
 							class="absolute left-[35%] top-[20%] scale-[40%] hover:scale-[55%]"
 							src="img/javascript-1.svg"
 							alt=""
 						/>
 						<img
+							data-tooltip-target="css"
+							data-tooltip-placement="right"
 							class="absolute left-[-40%] scale-[40%] hover:scale-[55%]"
 							src="img/CSS3_logo_and_wordmark.svg"
 							alt=""
 						/>
 						<img class="" src="img/circle.svg" alt="" />
+						<div
+							id="html5"
+							role="tooltip"
+							class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+						>
+							HTML is the standard markup language for webpages.
+						</div>
+
+						<div
+							id="css"
+							role="tooltip"
+							class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+						>
+							CSS takes care of the styling!
+						</div>
+
+						<div
+							id="js"
+							role="tooltip"
+							class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+						>
+							Javascript brings in the functionality and makes sites alive.
+						</div>
 					</div>
 					<div class="relative mb-16">
 						<img
@@ -202,6 +238,9 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="relative"></div>
+
 		<section id="contact">
 			<div
 				class="container flex flex-col p-6 py-24 items-center md:mx-auto md:flex-row-reverse md:max-w-6xl md:justify-between"
@@ -249,5 +288,9 @@
 			<div class="text-center"><p>coming soon...</p></div>
 			<div></div>
 		</div> -->
+
+		<script defer src="src/cookieconsent.js"></script>
+		<script defer src="src/cookieconsent-init.js"></script>
+		<script src="node_modules/flowbite/dist/flowbite.js"></script>
 	</body>
 </html>
