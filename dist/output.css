@@ -1133,6 +1133,102 @@ p {
   bottom: 0px;
 }
 
+.top-\[-50\%\] {
+  top: -50%;
+}
+
+.top-\[-30\%\] {
+  top: -30%;
+}
+
+.top-\[-900\%\] {
+  top: -900%;
+}
+
+.top-\[-90\%\] {
+  top: -90%;
+}
+
+.left-\[20\%\] {
+  left: 20%;
+}
+
+.top-\[-20\%\] {
+  top: -20%;
+}
+
+.top-\[40\%\] {
+  top: 40%;
+}
+
+.top-\[45\%\] {
+  top: 45%;
+}
+
+.right-\[10\%\] {
+  right: 10%;
+}
+
+.right-\[30\%\] {
+  right: 30%;
+}
+
+.left-\[30\%\] {
+  left: 30%;
+}
+
+.left-\[60\%\] {
+  left: 60%;
+}
+
+.left-\[-60\%\] {
+  left: -60%;
+}
+
+.left-\[80\%\] {
+  left: 80%;
+}
+
+.left-\[90\%\] {
+  left: 90%;
+}
+
+.top-\[-10\%\] {
+  top: -10%;
+}
+
+.left-\[95\%\] {
+  left: 95%;
+}
+
+.left-\[85\%\] {
+  left: 85%;
+}
+
+.left-\[65\%\] {
+  left: 65%;
+}
+
+.right-\[65\%\] {
+  right: 65%;
+}
+
+.right-\[45\%\] {
+  right: 45%;
+}
+
+.right-\[-45\%\] {
+  right: -45%;
+}
+
+.left-\[55\%\] {
+  left: 55%;
+}
+
+.top-\[-60\%\] {
+  top: -60%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1217,6 +1313,14 @@ p {
   margin-bottom: 0.25rem;
 }
 
+.mb-28 {
+  margin-bottom: 7rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
 .block {
   display: block;
 }
@@ -1283,6 +1387,26 @@ p {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+
+.w-\[35pc\] {
+  width: 35pc;
+}
+
+.w-\[35px\] {
+  width: 35px;
+}
+
+.w-\[45px\] {
+  width: 45px;
 }
 
 .max-w-6xl {
@@ -1369,6 +1493,24 @@ p {
 .scale-50 {
   --tw-scale-x: .5;
   --tw-scale-y: .5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-\[500\%\] {
+  --tw-scale-x: 500%;
+  --tw-scale-y: 500%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-\[100\%\] {
+  --tw-scale-x: 100%;
+  --tw-scale-y: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-\[65\%\] {
+  --tw-scale-x: 65%;
+  --tw-scale-y: 65%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1557,6 +1699,16 @@ p {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.bg-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 158 0 / var(--tw-bg-opacity));
+}
+
+.bg-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(93 93 93 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1644,6 +1796,16 @@ p {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1691,6 +1853,26 @@ p {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
 }
 
 .shadow-sm {
@@ -1802,6 +1984,11 @@ p {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-darkBlue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 115 217 / var(--tw-bg-opacity));
 }
 
 .hover\:text-yellow:hover {
@@ -1944,6 +2131,30 @@ p {
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
+  .sm\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .sm\:mb-32 {
+    margin-bottom: 8rem;
+  }
+
+  .sm\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1963,8 +2174,16 @@ p {
     margin-right: 6rem;
   }
 
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .md\:block {
     display: block;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-full {
@@ -2001,12 +2220,20 @@ p {
     margin-bottom: 3rem;
   }
 
+  .lg\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .lg\:block {
     display: block;
   }
 
   .lg\:grid {
     display: grid;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-\[165px\] {
