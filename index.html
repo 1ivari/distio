@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <!-- Google Tag Manager -->
     <script>
@@ -21,9 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Distio Oy is an IT-company providing affordable services in web development and data visualization. Distio is located in Espoo, Finland. "
+      content="Distio Oy — affordable data & IT solutions in Espoo, Finland. Web development, data visualisation, and Python-powered analytics."
     />
-    <title>Distio Oy</title>
+    <title>Distio Oy — Distillation for Data</title>
 
     <link href="build.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
@@ -31,7 +31,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Deferred CSS loading (recommended) -->
+    <!-- Modern font stack: Inter (body) + Sora (headings) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Cookie consent CSS (deferred) -->
     <link
       rel="stylesheet"
       href="src/cookieconsent.css"
@@ -39,384 +45,407 @@
       onload="this.media='all'"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      /* ─── Base ─────────────────────────────────────── */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3, h4 {
+        font-family: 'Sora', sans-serif;
+      }
+
+      /* ─── Hero animated gradient background ─────────── */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #f0f6ff 0%,
+          #e8f0fe 25%,
+          #fdf6e3 50%,
+          #f0f6ff 75%,
+          #e8f0fe 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 10s ease infinite;
+      }
+      @media (prefers-color-scheme: dark) {
+        .hero-gradient {
+          background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e293b 25%,
+            #1a1505 50%,
+            #0f172a 75%,
+            #1e293b 100%
+          );
+          background-size: 400% 400%;
+          animation: gradientShift 10s ease infinite;
+        }
+      }
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      /* ─── Bottle float animation ─────────────────────── */
+      .bottle-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-18px); }
+      }
+
+      /* ─── Scroll indicator bounce ────────────────────── */
+      .scroll-indicator {
+        animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); opacity: 0.7; }
+        50% { transform: translateY(8px); opacity: 1; }
+      }
+
+      /* ─── Card hover ─────────────────────────────────── */
+      .service-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+      @media (prefers-color-scheme: dark) {
+        .service-card:hover {
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      /* ─── Sticky navbar blur ─────────────────────────── */
+      .navbar-blur {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
+    <noscript>
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-WCP42FH"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+      ></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Navbar -->
-    <nav class="relative container mx-auto max-w-6xl p-6">
-      <!-- Flex container -->
-      <div class="flex items-center justify-center lg:justify-between">
-        <!-- Logo -->
-        <div class="pt-2">
-          <img class="lg:h-[165px]" src="img/svglogo.svg" alt="" />
+    <!-- ═══════════════════════════════════════════════════
+         NAVBAR
+    ═══════════════════════════════════════════════════ -->
+    <nav class="sticky top-0 z-50 navbar-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-100 dark:border-slate-800">
+      <div class="container mx-auto max-w-6xl px-6 py-3">
+        <div class="flex items-center justify-between">
+          <!-- Logo (swap to img/logo-2026.png once reviewed) -->
+          <a href="#" aria-label="Distio — home">
+            <img class="h-16" src="img/svglogo.svg" alt="Distio logo" />
+          </a>
+
+          <!-- Desktop menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#services"
+              class="text-base font-medium text-slate-700 dark:text-slate-300 hover:text-yellow transition-colors"
+            >Services</a>
+            <a
+              href="#contact"
+              class="text-base font-medium text-slate-700 dark:text-slate-300 hover:text-yellow transition-colors"
+            >About</a>
+            <a
+              href="#contact"
+              class="inline-block rounded-lg bg-darkBlue text-white text-sm font-semibold px-5 py-2.5 hover:bg-blue-700 transition-colors"
+            >Get in touch</a>
+          </div>
+
+          <!-- Mobile hamburger -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
 
-        <div class="hidden lg:block lg:ml-12 lg:p-6 lg:rounded-lg">
-          <!-- Menu items -->
-          <div class="flex justify-center space-x-10">
-            <a href="#competences" class="text-2xl hover:text-yellow"
-              >Services</a
-            >
-            <a href="#contact" class="text-2xl hover:text-yellow">About us</a>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-3 pb-3 border-t border-slate-100 dark:border-slate-800">
+          <div class="flex flex-col space-y-3 pt-3">
+            <a href="#services" class="text-base font-medium text-slate-700 dark:text-slate-300 hover:text-yellow transition-colors">Services</a>
+            <a href="#contact" class="text-base font-medium text-slate-700 dark:text-slate-300 hover:text-yellow transition-colors">About</a>
+            <a href="#contact" class="inline-block rounded-lg bg-darkBlue text-white text-sm font-semibold px-5 py-2.5 text-center hover:bg-blue-700 transition-colors">Get in touch</a>
           </div>
         </div>
       </div>
-      <hr />
     </nav>
 
-    <section id="hero">
-      <div
-        class="container flex flex-col mx-auto p-6 mt-16 mb-24 content-center items-center md:max-w-6xl md:flex-row"
-      >
-        <!-- Left portion -->
-        <div class="flex-col">
-          <div class="mb-5">
-            <img src="img/dist-data-sol.svg" alt="" />
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+    <section id="hero" class="hero-gradient">
+      <div class="container mx-auto max-w-6xl px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-12">
+
+        <!-- Left: text -->
+        <div class="flex-1 text-center md:text-left">
+          <div class="mb-6">
+            <img
+              src="img/dist-data-sol.svg"
+              alt="Distilled Data Solutions"
+              class="mx-auto md:mx-0 max-w-sm"
+            />
           </div>
-          <p>
-            Distio provides data and IT solutions that take in your information
-            clutter and distils it into refined
-            <span class="text-yellow">spirit</span> that ages well and helps
-            your business to focus on
-            <span class="text-yellow">the essential</span>.
+
+          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-lg mx-auto md:mx-0 leading-relaxed mb-8">
+            Distio takes in your information clutter and distils it into
+            refined <span class="text-yellow font-semibold">spirit</span> that
+            ages well — helping your business focus on
+            <span class="text-yellow font-semibold">the essential</span>.
           </p>
-          <div class="flex justify-center md:justify-start">
-            <a href="#contact">
-              <button class="rounded-md bg-darkBlue text-white p-4 m-6 ml-0">
-                GET IN TOUCH
-              </button>
-            </a>
-          </div>
+
+          <a href="#contact">
+            <button class="rounded-xl bg-darkBlue text-white font-semibold px-8 py-3.5 text-base hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/50">
+              GET IN TOUCH
+            </button>
+          </a>
         </div>
-        <!-- Right portion (bottle image) -->
-        <img
-          class="hidden md:block md:ml-6"
-          src="img/bottle_large.svg"
-          alt=""
-        />
+
+        <!-- Right: bottle illustration -->
+        <div class="flex-1 hidden md:flex justify-center">
+          <img
+            class="bottle-float max-w-xs"
+            src="img/bottle_large.svg"
+            alt="Distio bottle — a visual metaphor for data distillation"
+          />
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="flex justify-center pb-8">
+        <a href="#services" aria-label="Scroll to services" class="scroll-indicator text-slate-400 dark:text-slate-600">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </div>
     </section>
 
-    <section id="competences">
-      <div class="flex flex-col items-center mb-12 p-6">
-        <img src="img/hello_world.svg" alt="" />
+    <!-- ═══════════════════════════════════════════════════
+         SERVICES / COMPETENCES
+    ═══════════════════════════════════════════════════ -->
+    <section id="services" class="bg-slate-50 dark:bg-slate-800/50 py-20 px-6">
+      <div class="container mx-auto max-w-6xl">
 
-        <div class="py-4 max-w-lg text-center">
-          <p>
-            Simply put, Distio is one-man company with an aim to deliver
-            affordable services in the field of code & data. Currently Distio
-            can support you with following technologies:
-          </p>
-        </div>
-      </div>
-
-      <div class="container mx-auto p-6 md:max-w-6xl">
-        <!-- Show only in >md -->
-        <div
-          class="hidden lg:grid lg:grid-cols-4 lg:justify-between lg:justify-items-center lg:mb-12"
-        >
-          <h1>Web stack</h1>
-          <h1>Data stack</h1>
-          <h1>Frameworks</h1>
-          <h1>Project Management</h1>
-        </div>
-        <!-- End show only in >md -->
-
-        <div
-          class="grid grid-cols-1 justify-between justify-items-center sm:grid-cols-2 lg:grid-cols-4"
-        >
-          <div class="relative mb-32 sm:mb-24">
-            <h1 class="absolute left-[20%] top-[-40%] lg:hidden">Web Stack</h1>
-            <p
-              class="text-xs absolute w-[45px] left-[95%] top-[-10%] sm:hidden"
-            >
-              Touch logo to see more!
-            </p>
-            <p
-              class="text-xs absolute w-[45px] left-[95%] top-[-10%] hidden sm:block"
-            >
-              Hover on logo to see more!
-            </p>
-            <img
-              data-tooltip-target="html5"
-              data-tooltip-placement="bottom"
-              class="absolute scale-[50%] left-0 top-[-40%] hover:scale-[70%]"
-              src="img/HTML5_logo_black.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="js"
-              data-tooltip-placement="left"
-              class="absolute left-[35%] top-[20%] scale-[40%] hover:scale-[55%]"
-              src="img/javascript-1.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="css"
-              data-tooltip-placement="right"
-              class="absolute left-[-40%] scale-[40%] hover:scale-[55%]"
-              src="img/CSS3_logo_and_wordmark.svg"
-              alt=""
-            />
-            <img class="" src="img/circle.svg" alt="" />
-            <div
-              id="html5"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              HTML is the standard markup language for webpages.
-            </div>
-
-            <div
-              id="css"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              CSS takes care of the styling.
-            </div>
-
-            <div
-              id="js"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              Javascript is resposible of the functionality and brings the
-              website alive!
-            </div>
-          </div>
-
-          <div class="relative mb-32 sm:mb-">
-            <h1 class="absolute left-[20%] top-[-40%] lg:hidden">Data Stack</h1>
-            <img
-              data-tooltip-target="python"
-              data-tooltip-placement="bottom"
-              class="absolute scale-[70%] left-[15%] top-[-25%] hover:scale-[90%]"
-              src="img/Python-logo-notext.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="matlab"
-              data-tooltip-placement="right"
-              class="absolute scale-[50%] left-[-45%] top-[5%] hover:scale-[70%]"
-              src="img/Matlab_Logo.png"
-              alt=""
-            />
-            <img
-              data-tooltip-target="powerbi"
-              data-tooltip-placement="bottom"
-              class="absolute scale-[100%] left-[45%] top-[10%] hover:scale-[120%]"
-              src="img/Microsoft-Power-BI-Symbol.png"
-              alt=""
-            />
-            <img
-              data-tooltip-target="excel"
-              data-tooltip-placement="top"
-              class="absolute scale-[50%] left-[10%] top-[55%] hover:scale-[70%]"
-              src="img/excel.svg"
-              alt=""
-            />
-            <img src="img/circle.svg" alt="" />
-            <div
-              id="python"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              Python is high-level programming language ideal for data analysis
-              and machine learning & AI applications.
-            </div>
-
-            <div
-              id="matlab"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              Matlab is proprietary computing platform used especially for
-              engineering and scientific applications.
-            </div>
-
-            <div
-              id="powerbi"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              PowerBI is part of Microsoft Office365 suite focused on data
-              visualization. If you have needs to for well-visualized business
-              intelligence dashboards, this could be the way to go!
-            </div>
-
-            <div
-              id="excel"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              You know Excel. I can support to remove clutter and streamline
-              your spreadsheets.
-            </div>
-          </div>
-
-          <div class="relative mb-32 sm:mb-16">
-            <h1 class="absolute left-[20%] top-[-25%] lg:hidden">Frameworks</h1>
-            <img
-              data-tooltip-target="tailw"
-              data-tooltip-placement="bottom"
-              class="absolute scale-125 left-[10%] top-[15%] hover:scale-[150%]"
-              src="img/tailwindcss-logotype.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="react"
-              data-tooltip-placement="right"
-              class="absolute scale-50 left-[-45%] top-[25%] hover:scale-[70%]"
-              src="img/React-icon.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="django"
-              data-tooltip-placement="left"
-              class="absolute scale-[65%] left-[45%] top-[55%] hover:scale-[90%]"
-              src="img/django-logo-positive.svg"
-              alt=""
-            />
-            <img src="img/circle.svg" alt="" />
-            <div
-              id="tailw"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              TailwindCSS is a utility-first CSS framework to help style your
-              websites. For example this page uses TailwindCSS.
-            </div>
-
-            <div
-              id="react"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              React is an open-source front-end JavaScript library for building
-              modern web applications. React is maintained and used by Meta
-              (former Facebook).
-            </div>
-
-            <div
-              id="django"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              Django brings Python applications to web. It is used by well-known
-              websites/applications like Instagram.
-            </div>
-          </div>
-
-          <div class="relative mb-32 sm:mb-16">
-            <h1 class="absolute left-[20%] top-[-50%] lg:hidden">
-              Project Management
-            </h1>
-            <img
-              data-tooltip-target="pspo"
-              data-tooltip-placement="bottom"
-              class="absolute top-[-5%] hover:scale-[120%]"
-              src="img/PSPO.svg"
-              alt=""
-            />
-            <img
-              data-tooltip-target="pm"
-              data-tooltip-placement="top"
-              class="absolute left-[35%] top-[45%] hover:scale-[120%]"
-              src="img/trinity.svg"
-              alt=""
-            />
-            <img src="img/circle.svg" alt="" />
-
-            <div
-              id="pspo"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              I'm well familiar with Scrum framework and Agile methods. I've
-              acquired Professional Scrum Product Owner certificate (PSPO I).
-            </div>
-
-            <div
-              id="pm"
-              role="tooltip"
-              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 opacity-90 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-            >
-              I have 10 years of experience working in Product Management at
-              international high-tech company.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="relative"></div>
-
-    <section id="contact">
-      <div
-        class="container flex flex-col p-6 py-24 items-center md:mx-auto md:flex-row-reverse md:max-w-6xl md:justify-between"
-      >
-        <div class="mx-3">
-          <img class="mb-5" src="img/contactpricing.svg" alt="" />
-          <p class="max-w-fit">
-            Give me
-            <a
-              class="hover:text-yellow hover:text-bold"
-              href="tel:+358509132561"
-              >a call</a
-            >. I like to have clarity and predictability in pricing. Therefore,
-            I usually work on project-based payment model so you'll get one
-            clear price for the entire project. No surprises.
+        <!-- Section heading -->
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold font-heading text-slate-900 dark:text-white mb-4">
+            What I can do for you
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            A one-person shop with an aim to deliver affordable services in code &amp; data.
+            Here are the technologies I work with:
           </p>
         </div>
 
-        <div class="w-80 md:w-full mx-3 md:mr-24 my-4">
-          <img class="mt-12 rounded-lg" src="img/iivr-2.jpg" alt="" />
-          <p><strong>Iivari Heikkilä</strong></p>
-          <p>Entrepreneur</p>
-          <p>M.Sc. (Tech.)</p>
-        </div>
-      </div>
-      <hr />
-    </section>
-    <section id="footer">
-      <div class="flex justify-center w-screen p-4 mx-0">
-        <div class="flex-col text-center">
-          <p><a href="mailto:iivari@distio.fi">iivari@distio.fi</a></p>
-          <p><a href="tel:+358509132561">0509132561</a></p>
-          <p>Espoo, Finland</p>
-          <p>Copyright &copy; 2024 Distio Oy</p>
+        <!-- Service cards grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Web Stack -->
+          <div class="service-card rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30">
+              <img src="img/HTML5_logo_black.svg" alt="HTML5 logo" class="w-7 h-7 object-contain" />
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-slate-900 dark:text-white mb-3">Web Stack</h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>HTML5</strong> — standard markup for the web
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>CSS3</strong> — styling &amp; layout
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>JavaScript</strong> — functionality &amp; interactivity
+              </li>
+            </ul>
+          </div>
+
+          <!-- Data Stack -->
+          <div class="service-card rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-center w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/30">
+              <img src="img/Python-logo-notext.svg" alt="Python logo" class="w-7 h-7 object-contain" loading="lazy" />
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-slate-900 dark:text-white mb-3">Data Stack</h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>Python</strong> — data analysis &amp; ML/AI
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>MATLAB</strong> — engineering &amp; scientific computing
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>Power BI</strong> — business intelligence dashboards
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>Excel</strong> — spreadsheet streamlining
+              </li>
+            </ul>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="service-card rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-900/30">
+              <img src="img/React-icon.svg" alt="React logo" class="w-7 h-7 object-contain" loading="lazy" />
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-slate-900 dark:text-white mb-3">Frameworks</h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>TailwindCSS</strong> — utility-first styling
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>React</strong> — modern front-end UIs (Meta)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>Django</strong> — Python on the web (Instagram-scale)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Project Management -->
+          <div class="service-card rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-center w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/30">
+              <img src="img/PSPO.svg" alt="Professional Scrum Product Owner certificate badge" class="w-7 h-7 object-contain" loading="lazy" />
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-slate-900 dark:text-white mb-3">Project Management</h3>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>Scrum &amp; Agile</strong> — PSPO I certified
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow flex-shrink-0"></span>
+                <strong>10 years</strong> of Product Management at international high-tech
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- <div class="h-screen grid grid-cols-3 gap-4 content-center">
-			<div></div>
-			<div class="border-0">
-				<img src="img/Logo.png" class="w-full" alt="..." />
-			</div>
-			<div></div>
-			<div></div>
-			<div class="text-center"><p>coming soon...</p></div>
-			<div></div>
-		</div> -->
+    <!-- ═══════════════════════════════════════════════════
+         CONTACT / ABOUT
+    ═══════════════════════════════════════════════════ -->
+    <section id="contact" class="bg-white dark:bg-slate-900 py-20 px-6">
+      <div class="container mx-auto max-w-6xl">
 
+        <div class="rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden">
+          <div class="flex flex-col md:flex-row">
+
+            <!-- Photo -->
+            <div class="md:w-2/5">
+              <img
+                class="w-full h-64 md:h-full object-cover object-top"
+                src="img/iivr-2.jpg"
+                alt="Iivari Heikkilä — founder of Distio"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Text -->
+            <div class="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+              <img
+                class="mb-6 max-w-[220px]"
+                src="img/contactpricing.svg"
+                alt="Contact &amp; Pricing"
+                loading="lazy"
+              />
+
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Give me
+                <a class="text-darkBlue dark:text-lightBlue hover:text-yellow transition-colors font-medium" href="tel:+358509132561">a call</a>.
+                I like clarity and predictability in pricing — I usually work on a project-based model so you get one clear price for the entire project. No surprises.
+              </p>
+
+              <div class="space-y-1">
+                <p class="font-heading font-semibold text-xl text-slate-900 dark:text-white">Iivari Heikkilä</p>
+                <p class="text-slate-500 dark:text-slate-400">Entrepreneur · M.Sc. (Tech.)</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════ -->
+    <footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+      <!-- Gradient accent line -->
+      <div class="h-1 bg-gradient-to-r from-darkBlue via-yellow to-lightBlue"></div>
+
+      <div class="container mx-auto max-w-6xl px-6 py-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+          <div class="flex flex-col items-center md:items-start gap-1 text-sm text-slate-500 dark:text-slate-400">
+            <a href="mailto:iivari@distio.fi" class="hover:text-yellow transition-colors">iivari@distio.fi</a>
+            <a href="tel:+358509132561" class="hover:text-yellow transition-colors">+358 50 913 2561</a>
+            <span>Espoo, Finland</span>
+          </div>
+
+          <div class="text-sm text-slate-400 dark:text-slate-500">
+            <p>Copyright &copy; 2024–<span id="current-year"></span> Distio Oy</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
     <script defer src="src/cookieconsent.js"></script>
     <script defer src="src/cookieconsent-init.js"></script>
     <script src="src/flowbite.js"></script>
+
+    <script>
+      // Dynamic year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+      // Close mobile menu when a link is clicked
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
   </body>
 </html>
